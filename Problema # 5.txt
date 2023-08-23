@@ -1,0 +1,88 @@
+Problema #5: 
+	
+******* MENU *******
+**Menu: 
+	1.)Línea de carga
+		(Q) Ingrese Carga 
+		(x) Ingrese Distancia hacia el punto P
+		(2a) Ingrese el largo de la línea  
+	---> Campo Eléctrico = ???
+	---> Gráficamente la distribucíon de carga
+		-> Punto Escogido en x
+		-> Flecha de dirección de CampoE
+	
+	2.)Anillo 
+		(Q) Ingrese Carga 
+		(x) Ingrese Distancia hacia el punto P
+		(a) Ingrese el radio del anillo
+	---> Campo Eléctrico = ???
+	---> Gráficamente la distribucíon de carga
+		-> Punto Escogido en x
+		-> Flecha de dirección de CampoE
+
+	3.)Disco 
+		(Q) Ingrese Carga 
+		(x) Ingrese Distancia hacia el punto P
+		(R) Ingrese Radio del disco   
+	---> Campo Eléctrico = ???
+	---> Gráficamente la distribucíon de carga
+		-> Punto Escogido en x
+		-> Flecha de dirección de CampoE
+
+
+
+
+******* HARDWARE *******
+Funcion_ecuacion_CampoE_LinesDeCarga(Q,x,2a);
+	(suma,multi,integral)
+	Return int Campo_Magnitud 
+
+Funcion_ecuacion_CampoE_anillo(Q,x,a);
+	(suma,multi,integral)
+	Return int Campo_Magnitud 
+	
+Funcion_ecuacion_CampoE_Disco(Q,x,R);
+	(suma,multi,integral)
+	Return int Campo_Magnitud 
+
+Grafica_CampoE_LinesDeCarga(x,Direccion);
+
+Grafica_CampoE_anillo(x,Direccion);
+
+Grafica_CampoE_Disco(x,Direccion);
+
+
+
+
+
+******* OPERACIONES *******
+Return Campo_Magnitud 
+(q/x)
+Array de string, como haciamos el read  
+
+******* TAREAS ******* 
+1.) Sacar campos 
+2.) Como pasar los datos
+3.) Como usar Anillo en Disco 
+4.) Gráficas
+
+******* HERRAMIENTAS *******  
+1.) Tkinter 
+2.) scipy.integrate
+3.) Mathematical functions
+
+
+******* CRONOGRAMA ******* 
+**Martes(22/08)
+Problema_5(25/08)FÍSICA/  ---> Estudiar como fuciona 
+
+**Miercoles(23/08)
+Problema_5(25/08)FÍSICA// ---> Funciones de Campo Electrico 
+
+**Jueves(24/08)
+Problema_5(25/08)FÍSICA/// ---> Funciones de Gráficas 
+
+**Viernes(25/08)
+Problema_5(25/08)FÍSICA/// ---> Detalles y bugs
+
+
