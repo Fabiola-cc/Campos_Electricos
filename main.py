@@ -14,6 +14,7 @@ import tkinter as tk # Libreria para creacion de interfaz grafica
 
 'Realizar la interfaz principal para el programa'
 Main_page = tk.Tk()
+Main_page.geometry("750x250")
 
 Main_page.mainloop()
 
