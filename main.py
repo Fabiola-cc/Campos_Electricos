@@ -16,6 +16,19 @@ def clear_frame():
     for widgets in Main_page.winfo_children():
       widgets.destroy()
 
+def main():
+    clear_frame()
+    tk.Label(Main_page, text = "¿Qué tipo de campo eléctrico deseas calcular?", font="Times 20 italic").place(x=10,y=50)
+
+    tk.Label(Main_page, text = "\t Línea de carga", font="Times 15").place(x=5, y=120)
+    tk.Button(text ="▷", command= campoE_Linea).place(x=240, y=118)
+
+    tk.Label(Main_page, text = "\t Anillo", font="Times 15").place(x=5, y=150)
+    tk.Button(text ="▷", command = campoE_Anillo).place(x=240, y=148)
+
+    tk.Label(Main_page, text = "\t Disco", font="Times 15").place(x=5, y=180)
+    tk.Button(text ="▷", command = campoE_Disco).place(x=240, y=178)
+
 def campoE_Linea():
     clear_frame()
     tk.Label(Main_page, text = "\t Línea de carga", font="Times 25").place(x=100, y=10)
@@ -35,11 +48,12 @@ def campoE_Linea():
     def Call_calculation():
         E = calc.Funcion_ecuacion_CampoE_LineasDeCarga(float(Input_Carga.get()), float(Input_Distancia.get()), float(Input_Largo_linea.get()))
         graficas.Grafica_CampoE_LineasDeCarga(float(Input_Distancia.get()), E)
-        #PENDIENTE: mostrar resultado en interfaz
 
     Boton_listo = tk.Button(text ="Listo", command= Call_calculation)
     Boton_listo.place(x=15, y=170)
 
+    Boton_atras = tk.Button(text ="Regresar", command= main)
+    Boton_atras.place(x=105, y=170)
     
 def campoE_Anillo():
     clear_frame()
@@ -60,10 +74,12 @@ def campoE_Anillo():
     def Call_calculation():
         E = calc.Funcion_ecuacion_CampoE_anillo(float(Input_Carga.get()), float(Input_Distancia.get()), float(Input_radio.get()))
         graficas.Grafica_CampoE_anillo(float(Input_Distancia.get()), E)
-        #PENDIENTE: mostrar resultado en interfaz
 
     Boton_listo = tk.Button(text ="Listo", command= Call_calculation)
     Boton_listo.place(x=15, y=170)
+
+    Boton_atras = tk.Button(text ="Regresar", command= main)
+    Boton_atras.place(x=105, y=170)
 
 def campoE_Disco():
     clear_frame()
@@ -84,23 +100,15 @@ def campoE_Disco():
     def Call_calculation():
         E = calc.Funcion_ecuacion_CampoE_Disco(float(Input_Carga.get()), float(Input_Distancia.get()), float(Input_radio.get()))
         graficas.Grafica_CampoE_Disco(float(Input_Distancia.get()), E)
-        #PENDIENTE: mostrar resultado en interfaz
 
     Boton_listo = tk.Button(text ="Listo", command= Call_calculation)
     Boton_listo.place(x=15, y=170)
 
+    Boton_atras = tk.Button(text ="Regresar", command= main)
+    Boton_atras.place(x=105, y=170)
+
 Main_page = tk.Tk()
 Main_page.geometry("750x550")
-
-Label_pregunta = tk.Label(Main_page, text = "¿Qué tipo de campo eléctrico deseas calcular?", font="Times 20 italic").place(x=10,y=50)
-
-Label_linea = tk.Label(Main_page, text = "\t Línea de carga", font="Times 15").place(x=5, y=120)
-Boton_linea = tk.Button(text ="▷", command= campoE_Linea).place(x=240, y=118)
-
-Label_anillo = tk.Label(Main_page, text = "\t Anillo", font="Times 15").place(x=5, y=150)
-Boton_anillo = tk.Button(text ="▷", command = campoE_Anillo).place(x=240, y=148)
-
-Label_disco = tk.Label(Main_page, text = "\t Disco", font="Times 15").place(x=5, y=180)
-Boton_disco = tk.Button(text ="▷", command = campoE_Disco).place(x=240, y=178)
-
+main()
 Main_page.mainloop()
+

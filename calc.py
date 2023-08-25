@@ -33,6 +33,7 @@ def Funcion_ecuacion_CampoE_LineasDeCarga(Q,x,l):
     dE = lambda y: (k*Q*x)/(l*np.sqrt(x**2+y**2)**3)
     E = integrate.quad(dE, -a, a) 
     print('El valor del campo es:',"{:.3e}".format(E[0]))
+    return E[0]
 
 '''Funcion que calcula el campo electrico en un anillo circular.'''
 def Funcion_ecuacion_CampoE_anillo(Q,x,a):
@@ -40,6 +41,7 @@ def Funcion_ecuacion_CampoE_anillo(Q,x,a):
     dE = lambda s: (k*x*(Q/(2*np.pi*a)))/(np.sqrt(x**2+a**2)**3)
     E= integrate.quad(dE, 0, r) 
     print('El valor del campo es:',"{:.3e}".format(E[0]))
+    return E[0]
     
 '''Funcion que calcula el campo electrico en un disco circular.'''
 def Funcion_ecuacion_CampoE_Disco(Q,x,R):
