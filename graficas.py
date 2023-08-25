@@ -12,8 +12,20 @@ import turtle
 
 def Grafica_CampoE_LineasDeCarga(x,E):
     turtle.hideturtle()
+    #Eje y
+    turtle.pu()
+    turtle.color("grey")
+    turtle.goto(-145, 150)
+    turtle.write("y", move=False, align='left', font=('Arial', 8, 'normal'))
+    turtle.right(90)
+    turtle.pd()
+    turtle.fd(300)
+
+    #Creación de línea de carga
+    turtle.color("#D6A99A")
     turtle.pensize(2)
     turtle.pu()
+    turtle.left(90)
     turtle.goto(-150, -100)  # Mover el cursor a un punto visible
     turtle.pd()
     turtle.fd(10)
@@ -26,6 +38,7 @@ def Grafica_CampoE_LineasDeCarga(x,E):
     turtle.lt(90)
 
     #Eje x
+    turtle.color("black")
     turtle.pu()
     turtle.fd(10)
     turtle.lt(90)
@@ -35,12 +48,11 @@ def Grafica_CampoE_LineasDeCarga(x,E):
     turtle.fd(x*2+10)
     
     #Ubicación de partícula
-    turtle.color("black")
     turtle.penup()
     turtle.right(180)
     turtle.forward(10)
     turtle.pendown()
-    turtle.dot(5, "black")
+    turtle.dot(5)
     turtle.write("P", move=False, align='left', font=('Arial', 8, 'normal'))
 
     #Especificar valor de x
@@ -73,7 +85,7 @@ def Grafica_CampoE_LineasDeCarga(x,E):
     turtle.fd(2)#derecha
     turtle.left(90)
     turtle.forward(20)#arriba
-    turtle.write("Valor de campo eléctrico: " + "{:.3e}".format(E), move=False, align='left', font=('Arial', 7, 'normal'))
+    turtle.write("Valor de campo eléctrico: " + "{:.3e}".format(E), move=False, align='left', font=('Arial', 8, 'bold'))
     turtle.right(180)
     turtle.fd(15)
     turtle.left(90)
@@ -91,15 +103,23 @@ def Grafica_CampoE_LineasDeCarga(x,E):
     
 def Grafica_CampoE_anillo(x,E): #E campo eléctrico
     turtle.hideturtle()
+    #Eje y
+    turtle.pu()
+    turtle.color("grey")
+    turtle.goto(-150, 150)
+    turtle.write("y", move=False, align='left', font=('Arial', 8, 'normal'))
+    turtle.right(90)
+    turtle.pd()
+    turtle.fd(300)
+
     turtle.penup()  # Levantar el lápiz
     turtle.goto(-150, -100)  # Mover el cursor a un punto visible
+    turtle.left(90)
     turtle.pendown()  # Bajar el lápiz
 
-    # Iniciar el relleno
+    # Dibujar anillo
     turtle.color("#D6A99A")
     turtle.pensize(15)
-
-    # Dibujar el anillo exterior
     turtle.circle(100)
     turtle.pensize(2)
     
@@ -151,7 +171,7 @@ def Grafica_CampoE_anillo(x,E): #E campo eléctrico
     turtle.fd(2)
     turtle.left(90)
     turtle.forward(20)
-    turtle.write("Valor de campo eléctrico: " + "{:.3e}".format(E), move=False, align='left', font=('Arial', 7, 'normal'))
+    turtle.write("Valor de campo eléctrico: " + "{:.3e}".format(E), move=False, align='left', font=('Arial', 8, 'bold'))
     turtle.right(180)
     turtle.fd(15)
     turtle.left(90)
@@ -169,15 +189,24 @@ def Grafica_CampoE_anillo(x,E): #E campo eléctrico
 
 def Grafica_CampoE_Disco(x,E):
     turtle.hideturtle()
-    turtle.pensize(2)
+
+    #Eje y
+    turtle.pu()
+    turtle.color("grey")
+    turtle.goto(-150, 150)
+    turtle.write("y", move=False, align='left', font=('Arial', 8, 'normal'))
+    turtle.right(90)
+    turtle.pd()
+    turtle.fd(300)
+
     turtle.penup()  # Levantar el lápiz
     turtle.goto(-150, -100)  # Mover el cursor a un punto visible
+    turtle.left(90)
     turtle.pendown()  # Bajar el lápiz
 
-    # Iniciar el relleno
-    turtle.begin_fill()
-
+    turtle.pensize(2)
     # Dibujar el disco
+    turtle.begin_fill()
     turtle.color("#D6A99A", "#D6CBC1")
     turtle.circle(100)
     turtle.end_fill()
@@ -230,7 +259,7 @@ def Grafica_CampoE_Disco(x,E):
     turtle.fd(2)
     turtle.left(90)
     turtle.forward(20)
-    turtle.write("Valor de campo eléctrico: " + "{:.3e}".format(E), move=False, align='left', font=('Arial', 7, 'normal'))
+    turtle.write("Valor de campo eléctrico: " + "{:.3e}".format(E), move=False, align='left', font=('Arial', 8, 'bold'))
     turtle.right(180)
     turtle.fd(15)
     turtle.left(90)
