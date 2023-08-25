@@ -46,4 +46,5 @@ def Funcion_ecuacion_CampoE_Disco(Q,x,R):
     dE = lambda r: (x*Q*r)/(2*np.pi*(R**2)*constants.epsilon_0*(np.sqrt(x**2+r**2)**3))
     E = integrate.quad(dE, 0, int(R)) 
     print('El valor del campo es:',"{:.3e}".format(E[0]))
+    return E[0]
 
