@@ -58,7 +58,7 @@ def campoE_Anillo():
     tk.Entry(textvariable=Input_Distancia).place(x=10,y=145)
 
     def Call_calculation():
-        calc.Funcion_ecuacion_CampoE_anillo(Input_Carga, Input_Distancia, Input_radio)
+        calc.Funcion_ecuacion_CampoE_anillo(float(Input_Carga.get()), float(Input_Distancia.get()), float(Input_radio.get()))
         #graficas.Grafica_CampoE_anillo(x=Input_Distancia, Direccion="+")
         #PENDIENTE: mostrar resultado en interfaz
 
@@ -82,7 +82,7 @@ def campoE_Disco():
     tk.Entry(textvariable=Input_Distancia).place(x=10,y=145)
 
     def Call_calculation():
-        calc.Funcion_ecuacion_CampoE_Disco(Input_Carga, Input_Distancia, Input_radio)
+        calc.Funcion_ecuacion_CampoE_Disco(float(Input_Carga.get()), float(Input_Distancia.get()), float(Input_radio.get()))
         #graficas.Grafica_CampoE_Disco(x=Input_Distancia, Direccion="+")
         #PENDIENTE: mostrar resultado en interfaz
 
