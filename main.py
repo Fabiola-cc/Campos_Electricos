@@ -58,8 +58,8 @@ def campoE_Anillo():
     tk.Entry(textvariable=Input_Distancia).place(x=10,y=145)
 
     def Call_calculation():
-        calc.Funcion_ecuacion_CampoE_anillo(float(Input_Carga.get()), float(Input_Distancia.get()), float(Input_radio.get()))
-        #graficas.Grafica_CampoE_anillo(x=Input_Distancia, Direccion="+")
+        E = calc.Funcion_ecuacion_CampoE_anillo(float(Input_Carga.get()), float(Input_Distancia.get()), float(Input_radio.get()))
+        graficas.Grafica_CampoE_anillo(float(Input_Distancia.get()), E)
         #PENDIENTE: mostrar resultado en interfaz
 
     Boton_listo = tk.Button(text ="Listo", command= Call_calculation)
