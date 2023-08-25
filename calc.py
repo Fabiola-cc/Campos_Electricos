@@ -23,6 +23,7 @@ l: largo de la línea de carga
 '''
 
 k = 8.988*10**9 #Valor de 1/4π∈₀
+e0= 8.85*10**(-12)
 #ecuacion_general_CampoE = (k*Q)/(r**2)
 
 '''Funcion que calcula el campo electrico en una línea de carga.'''
@@ -35,15 +36,13 @@ def Funcion_ecuacion_CampoE_LineasDeCarga(Q,x,l):
 
 '''Funcion que calcula el campo electrico en un anillo circular.'''
 def Funcion_ecuacion_CampoE_anillo(Q,x,a):
-    r = np.sqrt(x**2+a**2)
-    s = 2*np.pi*a
-    lamda= Q/((2)(np.pi)(a))
-    dE = lambda s: (k*(lamda)*x)/(l*np.sqrt(x**2+y**2)**3)
-    E = integrate.quad(dE, 0, (2)(np.pi)(a)) 
-    result = 0
-    return result
+    dE = lambda s: (k*x*(Q/(2*np.pi*a)))/(np.sqrt(x**2+a**2)**3)
+    E = integrate.quad(dE, 0, 2*np.pi*a) 
+    print('El valor del campo es:',"{:.3e}".format(E[0]))
     
 '''Funcion que calcula el campo electrico en un disco circular.'''
 def Funcion_ecuacion_CampoE_Disco(Q,x,R):
-    result = 0
-    return result
+    dE = lambda r: (x*Q*r)/(2*np.pi*(R**2)*e0*(np.sqrt(x**2+r**2)**3))
+    E = integrate.quad(dE, 0, R) 
+    print('El valor del campo es:',"{:.3e}".format(E[0]))
+
