@@ -41,7 +41,6 @@ def campoE_Linea():
     Boton_listo.place(x=15, y=170)
 
     
-''' FUNCIONAMIENTO CAMPOS ANILLO Y DISCO PENDIENTE
 def campoE_Anillo():
     clear_frame()
     tk.Label(Main_page, text = "\t Anillo de carga", font="Times 25").place(x=100, y=10)
@@ -89,7 +88,6 @@ def campoE_Disco():
 
     Boton_listo = tk.Button(text ="Listo", command= Call_calculation)
     Boton_listo.place(x=15, y=170)
-'''
 
 Main_page = tk.Tk()
 Main_page.geometry("750x550")
@@ -100,9 +98,9 @@ Label_linea = tk.Label(Main_page, text = "\t Línea de carga", font="Times 15").
 Boton_linea = tk.Button(text ="▷", command= campoE_Linea).place(x=240, y=118)
 
 Label_anillo = tk.Label(Main_page, text = "\t Anillo", font="Times 15").place(x=5, y=150)
-#Boton_anillo = tk.Button(text ="▷", command = campoE_Anillo).place(x=240, y=148)
+Boton_anillo = tk.Button(text ="▷", command = campoE_Anillo).place(x=240, y=148)
 
 Label_disco = tk.Label(Main_page, text = "\t Disco", font="Times 15").place(x=5, y=180)
-#Boton_disco = tk.Button(text ="▷", command = campoE_Disco).place(x=240, y=178)
+Boton_disco = tk.Button(text ="▷", command = campoE_Disco).place(x=240, y=178)
 
 Main_page.mainloop()

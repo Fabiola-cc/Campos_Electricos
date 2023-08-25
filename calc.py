@@ -9,9 +9,9 @@ María José Villafuerte 22129
 '''
 
 # Importamos las librerías necesarias para la simulación.
+from tkinter import DoubleVar
 import numpy as np # Libreria científica y matemática para Python.
 from scipy import constants, integrate   # Librerias para integrar funciones en un intervalo dado.
-
 '''
 Diccionario: 
 K: Contante de Coulomb
@@ -36,13 +36,14 @@ def Funcion_ecuacion_CampoE_LineasDeCarga(Q,x,l):
 
 '''Funcion que calcula el campo electrico en un anillo circular.'''
 def Funcion_ecuacion_CampoE_anillo(Q,x,a):
+    r= 2 * np.pi * a
     dE = lambda s: (k*x*(Q/(2*np.pi*a)))/(np.sqrt(x**2+a**2)**3)
-    E = integrate.quad(dE, 0, 2*np.pi*a) 
+    E= integrate.quad(dE, 0, r) 
     print('El valor del campo es:',"{:.3e}".format(E[0]))
     
 '''Funcion que calcula el campo electrico en un disco circular.'''
 def Funcion_ecuacion_CampoE_Disco(Q,x,R):
-    dE = lambda r: (x*Q*r)/(2*np.pi*(R**2)*e0*(np.sqrt(x**2+r**2)**3))
-    E = integrate.quad(dE, 0, R) 
+    dE = lambda r: (x*Q*r)/(2*np.pi*(R**2)*constants.epsilon_0*(np.sqrt(x**2+r**2)**3))
+    E = integrate.quad(dE, 0, int(R)) 
     print('El valor del campo es:',"{:.3e}".format(E[0]))
 
