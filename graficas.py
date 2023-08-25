@@ -12,7 +12,7 @@ import turtle
 
 def Grafica_CampoE_LineasDeCarga(x,E):
     turtle.pu()
-    turtle.setposition(-200,0)
+    turtle.goto(-150, -100)  # Mover el cursor a un punto visible
     turtle.pd()
     turtle.fd(50)
     turtle.lt(90)
@@ -28,8 +28,70 @@ def Grafica_CampoE_LineasDeCarga(x,E):
     turtle.fd(100)
     turtle.rt(90)
     turtle.pd()
-    turtle.fd(x*20)
-    turtle.done()
+    turtle.fd(x*60+50)
+    
+    #Ubicación de partícula
+    turtle.color("black")
+    turtle.penup()
+    turtle.right(180)
+    turtle.forward(50)
+    turtle.pendown()
+    turtle.circle(3)
+    turtle.write("P", move=False, align='left', font=('Arial', 8, 'normal'))
+
+    #Especificar valor de x
+    turtle.color("#E16036")
+    turtle.penup()
+    turtle.left(90)
+    turtle.forward(10)
+    turtle.pendown()
+    turtle.fd(5)
+    turtle.right(90)
+    turtle.fd(x*60)
+    turtle.right(90)
+    turtle.fd(5)
+    turtle.color("black")
+    turtle.penup()
+    turtle.right(90)
+    turtle.forward(x*30-3)
+    turtle.right(90)
+    turtle.forward(5)
+    turtle.pendown()
+    turtle.write("x = " + str(x), move=False, align='left', font=('Arial', 7, 'normal'))
+
+    #Especificar valor del campo eléctrico y mostrar dirección
+    turtle.penup()
+    turtle.left(180)
+    turtle.forward(10)
+    turtle.right(90)
+    turtle.forward(x*30+3)
+    #Variación según dirección
+    if E < 0:
+        turtle.right(180)
+        turtle.fd(130)
+        turtle.right(90)
+        turtle.forward(20)
+        turtle.write("Valor de campo eléctrico: " + str(E), move=False, align='left', font=('Arial', 7, 'normal'))
+        turtle.right(180)
+        turtle.fd(15)
+        turtle.right(90)
+        turtle.backward(130)
+    else:
+        turtle.fd(20)
+        turtle.left(90)
+        turtle.forward(20)
+        turtle.write("Valor de campo eléctrico: " + "{:.3e}".format(E), move=False, align='left', font=('Arial', 7, 'normal'))
+        turtle.right(180)
+        turtle.fd(15)
+        turtle.left(90)
+        turtle.backward(20)
+
+    turtle.color("#E3170A")
+    turtle.pendown()
+    turtle.showturtle()
+    turtle.fd(30)
+    turtle.write("Dirección de E", font=('Arial', 8, 'bold'))
+
      # Cerrar la ventana al hacer clic
     turtle.exitonclick()
 

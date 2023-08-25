@@ -33,8 +33,8 @@ def campoE_Linea():
     tk.Entry(textvariable=Input_Distancia).place(x=10,y=145)
 
     def Call_calculation():
-        calc.Funcion_ecuacion_CampoE_LineasDeCarga(Input_Carga.get(), Input_Distancia.get(), Input_Largo_linea.get())
-        #graficas.Grafica_CampoE_LineasDeCarga(x=Input_Distancia, Direccion="+")
+        E = calc.Funcion_ecuacion_CampoE_LineasDeCarga(float(Input_Carga.get()), float(Input_Distancia.get()), float(Input_Largo_linea.get()))
+        graficas.Grafica_CampoE_LineasDeCarga(float(Input_Distancia.get()), E)
         #PENDIENTE: mostrar resultado en interfaz
 
     Boton_listo = tk.Button(text ="Listo", command= Call_calculation)
