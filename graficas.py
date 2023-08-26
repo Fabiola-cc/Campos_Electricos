@@ -7,7 +7,6 @@ Simulación de Campo Eléctricos
 Fabiola Contreras 22787
 María José Villafuerte 22129
 '''
-import tkinter as tk # Libreria para creacion de interfaz grafica
 import turtle
 
 def Grafica_CampoE_LineasDeCarga(x,E):
@@ -101,7 +100,7 @@ def Grafica_CampoE_LineasDeCarga(x,E):
      # Cerrar la ventana al hacer clic
     turtle.exitonclick()
     
-def Grafica_CampoE_anillo(x,E): #E campo eléctrico
+def Grafica_CampoE_anillo(r,x,E): #E campo eléctrico
     turtle.hideturtle()
     #Eje y
     turtle.pu()
@@ -113,27 +112,31 @@ def Grafica_CampoE_anillo(x,E): #E campo eléctrico
     turtle.fd(300)
 
     turtle.penup()  # Levantar el lápiz
-    turtle.goto(-150, -100)  # Mover el cursor a un punto visible
+    turtle.goto(-150, -r*2)
     turtle.left(90)
     turtle.pendown()  # Bajar el lápiz
 
     # Dibujar anillo
     turtle.color("#D6A99A")
-    turtle.pensize(15)
-    turtle.circle(100)
+    turtle.pensize(5)
+    turtle.circle(r*2)
     turtle.pensize(2)
     
-    #Linea x
+    #Identificación de radio
     turtle.color("black")
     turtle.penup()
-    turtle.left(90)
-    turtle.forward(90)
-    turtle.right(90)
+    turtle.goto(-150, r*2)
+    turtle.pendown()
+    turtle.dot(5)
+    turtle.write("r = " + str(r), align='right', font=('Arial', 7, 'bold'))
+
+    #Linea x
+    turtle.penup()
+    turtle.goto(-150, 0)
     turtle.pendown()
     turtle.fd(x*2+10)
 
     #Ubicación de partícula
-    turtle.color("black")
     turtle.penup()
     turtle.right(180)
     turtle.forward(10)
@@ -187,7 +190,7 @@ def Grafica_CampoE_anillo(x,E): #E campo eléctrico
     # Cerrar la ventana al hacer clic
     turtle.exitonclick()
 
-def Grafica_CampoE_Disco(x,E):
+def Grafica_CampoE_Disco(r,x,E):
     turtle.hideturtle()
 
     #Eje y
@@ -199,23 +202,31 @@ def Grafica_CampoE_Disco(x,E):
     turtle.pd()
     turtle.fd(300)
 
-    turtle.penup()  # Levantar el lápiz
-    turtle.goto(-150, -100)  # Mover el cursor a un punto visible
+    #Posición para dibujar el disco al centro
+    turtle.penup()
+    turtle.goto(-150, -r*2)
     turtle.left(90)
-    turtle.pendown()  # Bajar el lápiz
-
+    turtle.pendown()
     turtle.pensize(2)
+
     # Dibujar el disco
     turtle.begin_fill()
     turtle.color("#D6A99A", "#D6CBC1")
-    turtle.circle(100)
+    turtle.circle(r*2)
     turtle.end_fill()
     
-    #Linea x
+    #Identificación de radio
+    turtle.color("black")
     turtle.penup()
-    turtle.left(90)
-    turtle.forward(90)
-    turtle.right(90)
+    turtle.goto(-150, r*2)
+    turtle.pendown()
+    turtle.dot(5)
+    turtle.write("r = " + str(r), align='right', font=('Arial', 7, 'bold'))
+
+    #Linea x
+    turtle.color("#D6A99A")
+    turtle.penup()
+    turtle.goto(-150,0)
     turtle.pendown()
     turtle.fd(x*2+10)
 
